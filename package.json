@@ -1,0 +1,22 @@
+{
+  "name": "ee-guide",
+  "version": "1.0.0",
+  "description": "app serve tourists",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server",
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "Mohamed elsawy",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^9.0.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "concurrently": "^6.1.0",
+    "nodemon": "^2.0.7"
+  }
+}
