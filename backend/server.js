@@ -3,6 +3,7 @@ const dotenv  = require('dotenv')
 const connectDB = require('./config/db')
 const productRoute = require('./routes/productRoute')
 const userRoute = require('./routes/usreRoute')
+const orderRoute = require('./routes/orderRoute')
 const errormiddelware  = require('./middelware/errorMiddelware') 
 dotenv.config()
 
@@ -18,6 +19,7 @@ app.get('/' ,(req,res) => {
 
 app.use('/api/products',productRoute)
 app.use('/api/users',userRoute)
+app.use('/api/orders',orderRoute)
 
 // error middelware
 app.use(errormiddelware.notFound)
