@@ -12,7 +12,6 @@ import
         USER_DETAILS_SUCCESS,
         USER_UPDATE_PROFILE_FAIL,
         USER_UPDATE_PROFILE_REQEST,
-        USER_UPDATE_PROFILE_RESET,
         USER_UPDATE_PROFILE_SUCCESS
     } from '../constants/userConstant'
 export const userLoginReducer = (state ={} , action) =>{
