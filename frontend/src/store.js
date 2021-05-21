@@ -3,32 +3,50 @@ import thunk from 'redux-thunk'
 import {composeWithDevTools} from 'redux-devtools-extension'
 import {
     productListReducer , 
-    productDetailsReducer
+    productDetailsReducer,
+    productDeleteReducer,
+    productCreateReducer,
+    productUpdateReducer
 } from './reducers/productReducer'
 import {cartReducer} from './reducers/cartReducer'
 import {
     userLoginReducer,
     userRegisterReducer,
     userDetailsReducer,
-    userUpdateProfileReducer
+    userUpdateProfileReducer,
+    userListReducer,
+    userDeleteReducer,
+    userUpdateReducer
 } from './reducers/userReducer'
 import {
         oredrCreateReducer,
         oredrDetailsReducer,
-        oredrPayReducer
+        oredrPayReducer,
+        oredrDeliverReducer,
+        oredrListMyReducer,
+        oredrListReducer
 } from './reducers/orderReducer'
 
 const reducer = combineReducers({
     productList : productListReducer,
     productDetails:productDetailsReducer,
+    productDelete:productDeleteReducer,
+    productCreate:productCreateReducer,
+    productUpdate:productUpdateReducer,
     cart:cartReducer,
     userLogin:userLoginReducer,
     userRegister:userRegisterReducer,
     userDetails:userDetailsReducer,
     userUpdateProfile:userUpdateProfileReducer,
+    userList:userListReducer,
+    userDelete:userDeleteReducer,
+    userUpdate:userUpdateReducer,
     orderCreate:oredrCreateReducer,
     orderDetails:oredrDetailsReducer,
-    orderPay:oredrPayReducer
+    orderPay:oredrPayReducer,
+    orderDeliver:oredrDeliverReducer,
+    orderListMy:oredrListMyReducer,
+    orderList:oredrListReducer
 })
 
 const cartItemsFromStorage = localStorage.getItem('cartItems') 
