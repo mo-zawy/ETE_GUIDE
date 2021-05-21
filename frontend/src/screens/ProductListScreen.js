@@ -4,6 +4,7 @@ import {Table,Button , Row ,Col } from 'react-bootstrap'
 import {useDispatch, useSelector} from 'react-redux'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
+import Paginate from '../components/Paginate'
 import {
         listProducts , 
         deleteProduct ,
@@ -12,10 +13,11 @@ import {
 import {PRODUCT_CREATE_RESET} from '../constants/productConstant'
 
 const ProductListScreen = ({history , match}) => {
+    const pageNumber = match.params.pageNumber || 1
     const dispatch = useDispatch()
 
     const productList = useSelector(state => state.productList)
-    const {loading , error , products} = productList
+    const {loading , error , products,page,pages} = productList
 
     const productDelete = useSelector(state => state.productDelete)
     const {loading:loadingDelete , error:erorrDelete , success:successDelete} = productDelete
@@ -38,9 +40,17 @@ const ProductListScreen = ({history , match}) => {
             history.push(`/admin/product/${createdProduct._id}/edit`)
         }
         else{
-            dispatch(listProducts())
+            dispatch(listProducts('',pageNumber))
         }
-    },[dispatch , history,userInfo ,successCreate , createdProduct, successDelete])
+    },[
+        dispatch ,
+        history,
+        userInfo ,
+        successCreate ,
+        pageNumber ,
+        createdProduct,
+        successDelete,
+    ])
    
     const createProductHandler = () =>{
         // create product
@@ -71,6 +81,7 @@ const ProductListScreen = ({history , match}) => {
             {erorrCreate && <Message variant='danger'>{erorrCreate}</Message>}
             
             {loading? <Loader /> :error ? <Message variant='danger'>{error}</Message>:(
+                <>
                 <Table striped bordered hover responsive className='table-sm'>
                     <thead>
                         <tr>
@@ -105,6 +116,8 @@ const ProductListScreen = ({history , match}) => {
                         ))}
                     </tbody>
                 </Table>
+                <Paginate page={page} pages={pages} isAdmin={true} />
+                </>
             )}   
         </>
     )
