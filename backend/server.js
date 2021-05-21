@@ -7,14 +7,16 @@ const userRoute = require('./routes/usreRoute')
 const orderRoute = require('./routes/orderRoute')
 const uploadRoute = require('./routes/uploadRoute')
 const errormiddelware  = require('./middelware/errorMiddelware') 
-
+const morgan = require('morgan')
 dotenv.config()
 
 connectDB()
 
 const app = express()
 
-
+if(process.env.NODE_ENV === 'development'){
+  app.use(morgan('dev'))
+}
 
 app.use(express.json())
 

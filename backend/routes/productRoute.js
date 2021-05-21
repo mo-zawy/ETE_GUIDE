@@ -5,7 +5,8 @@ const {
     getProducts , 
     deleteProduct,
     updateProduct,
-    createProduct
+    createProduct,
+    createProductReview
 } = require('../controllers/productController')
 const {admin,protect} = require('../middelware/authMeddelware')
 
@@ -13,6 +14,7 @@ router.route('/')
             .get(getProducts)
             .post(protect,admin,createProduct)
 
+router.route('/:id/reviews').post(protect,createProductReview)
 
 router.route('/:id')
             .get(getProductById)
