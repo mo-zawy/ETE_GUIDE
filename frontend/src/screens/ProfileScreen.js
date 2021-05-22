@@ -1,5 +1,6 @@
 import React , {useState, useEffect} from 'react'
 import {Form , Button , Row , Col , Table} from 'react-bootstrap'
+import {LinkContainer} from 'react-router-bootstrap'
 import {useDispatch, useSelector} from 'react-redux'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
@@ -119,7 +120,7 @@ const ProfileScreen = ({location, history}) => {
             <Col md={9}>
                 <h2>My Orders</h2>
                 {loadingOrders ? <Loader /> : errorOrders ? <Message variant='danger'>{errorOrders}</Message>:(
-                    <Table striped bordered hover responsie className='table-sm'>
+                    <Table striped bordered hover responsive className='table-sm'>
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -145,9 +146,9 @@ const ProfileScreen = ({location, history}) => {
                                         )}
                                     </td>
                                     <td>
-                                        <linkContainer to={`/order/${order._id}`}>
+                                        <LinkContainer to={`/order/${order._id}`}>
                                             <Button className='btn-sm' variant='light'>Details</Button>
-                                        </linkContainer>
+                                        </LinkContainer>
                                     </td>
                                 </tr>
                             ))}
