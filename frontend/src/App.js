@@ -17,6 +17,8 @@ import UserListScreen from './screens/UserListScreen'
 import UserEditScreen from './screens/UserEditScreen'
 import ProductListScreen from './screens/ProductListScreen'
 import ProductEditScreen from './screens/ProductEditScreen'
+import Header1 from './components/Header1'
+import Footer1 from './components/Footer1'
 
 
 
@@ -25,7 +27,8 @@ import ProductEditScreen from './screens/ProductEditScreen'
 const App = () => {
   return (
     <Router>
-      <Header />
+      <Header1 />
+      {/*<Header />>*/ }
       <main className='py-3'>
         <Container>
           <Route  path='/order/:id' component={OrderScreen} />
@@ -49,6 +52,7 @@ const App = () => {
           <Route exact path='/' component={HomeScreen} />
         </Container>
       </main>
+      <Footer1 />
       <Footer />
     </Router>
   );

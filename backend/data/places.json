@@ -1,0 +1,107 @@
+{
+"places":[
+    {"placeId":1,
+    "name":"saqara pyramid",
+    "location":"3km from metrhina city",
+    "price":180,
+    "type":"pharoh",
+    "discription":"Saqqara Cemetery is one of the most important archaeological sites in Egypt, as there are tombs whose walls are covered with inscriptions of great beauty and splendor, and there are pyramids, temples and cemeteries of the Serapeum. Its name was derived from the god of cowardice, Sucre.Saqqara Cemetery is the only cemetery in Egypt that includes tombs from the beginning of Egyptian history until its end. It also includes many antiquities from the Greek and Roman eras. Saqqara was classified as a World Heritage Site by UNESCO in 1979. The most important effects of Saqqara can be pointed out by dividing the area into sectors, namely: - The northern sector: It includes a group of cemeteries, the most important of which is the tomb of Kaabar (Sheikh Al-Balad) and the cemetery of Hassi Ra, The catacombs dug in the ground, which were designated for burying the ibis after embalming it, and also terraces after the kings of the first and second dynasties. - The middle sector: It is the most important sector in the cemetery, where there is the funerary group of King Djoser which is located inside the large wall with a pyramid in the middle. It is the first pyramid built of stone built by the architect Imhotep, as well as the pyramid of King Userkaf, the first king of the fifth family.- The pyramid sector of Titi: The pyramid includes the first kings of the Sixth Dynasty and the pyramids of his two wives, and a group of state cemeteries, such as the Mer Rocca cemetery .- The western sector: It includes the serbium, and is designated for burying the sacred calf during the era of the Twenty-Sixth Dynasty, and it continued to be used until the age The Ptolemaic sector - Haram and Nice sector: It includes the Wanis pyramid and its hierarchical group, and its importance is due to the presence of hieroglyphic writings on its walls that include religious spells for the deceased known as the pyramids. Cemetery Shepskaf, known as Mastaba of Pharaoh.",
+    "Governorate":"Giza",
+    "timeRegion":"8am  - 5pm"
+},
+{
+    "placeId":2,
+    "name":"abu-simbl temple",
+    "location":"shouth aswan",
+    "price":240,
+    "type":"pharoh",
+    "discription":"They date the temple of Abu Simbel with the era of King Ramses II (1279-1212 BC). They pitted a high sandstone plateau 4 km south of their current location, to which they were moved in the campaign to save the monuments of Nubia after the establishment of the High Dam in 1960 AD. The Abu Simbel site includes two temples, namely, the Great Temple of Abu Simbel, which was dedicated to the worship of Ra Hur Akti and Amun Ra Ptah and the king himself, and the small temple of Abu Simbel, which is located 100 meters from the first temple that was dedicated to the goddess Hathor and Queen Nefertari, the principal wife of the king.The name Abu Simbel was given to this site by the Swiss traveler Johann Ludwig Burckhardt known as Ibrahim Burckhardt who discovered the site in 1813 AD when a child named Abu Simbel took him to him.The importance of the Great Temple of Abu Simbel is due to its association with the phenomenon of the sun crossing the face of the statue of Pharaoh Ramses II twice a year. The first corresponds to his birthday, which corresponds to October 22, and the second, on February 22, to commemorate his coronation. The temple also features a unique architectural design; Its fa�ade is clicked in the rock, and it is decorated with four huge statues of King Ramses II, each of which reaches about 20 m in length, and next to the fa�ade is a corridor leading to the inside of the temple that pecked into the rock at a depth of 48 m and its walls are decorated with scenes recording the king�s victories and conquests, including the Battle of Kadesh, in which he won the Hittites , In addition to religious scenes depicting the king in his relations with Egyptian deities.As for the small temple of Abu Simbel, King Ramses II gifted it to Queen Nefertari, his main wife and his lover, and its fa�ade is adorned with six huge statues of equal size representing the king and the queen in a clear demonstration of the high status that the queen enjoyed with her husband. Among the wonderful scenes depicting the queen worshiping the different deities, either with the king or alone.Saqqara was designated a World Heritage Site by UNESCO in 1979.",
+    "Governorate":"aswan",
+    "timeRegion":"7am  - 5pm at summer  7am-4pm at winter"
+},
+{"placeId":3,
+"name":"fila temple",
+"location":"agilka island",
+"price":180,
+"type":"pharoh",
+"discription":"Philae Island gained great importance to the ancient Egyptians due to its privileged location; She and Aswan Island formed natural geographical borders, and was known in Egyptian texts with the dividing line. As for the word Philae, it is derived from the Greek word velay meaning beloved, and it was known in Arabic literature as Anas Al Wujud due to its association with stories of folklore. The efforts of the Nuba Antiquities Rescue Fund to fully transfer the island's antiquities to the neighboring island of Agilika.The Temple of Isis is the main temple on the island, occupying a quarter of its area. It was built by King Ptolemy II in place of another smaller temple that was also dedicated to Isis and dedicated to the soldiers assigned to protect the southern borders of Egypt. Many Ptolemaic kings contributed to its construction.
+There is also a temple dedicated to the worship of Hathor on the island, in addition to the shrine of Nakhtenebo I, as well as the shrine of Taharqa that he also built for Isis.",
+"Governorate":"aswan",
+"timeRegion":"7am  - 5pm at summer  7am-4pm at winter"
+},
+{"placeId":4,
+"name":"Giza pyramids",
+"location":"Pyramids",
+"price":200,
+"type":"pharoh",
+"discription":"One of the Seven Wonders of the World, the region includes three pyramids (the pyramid of Khufu - the pyramid of Khafre - the pyramid of Menkaure) in addition to the famous statue of the Sphinx.
+The pyramid of Khufu represents the most recent efforts and experiences of building pyramids. Not only is this pyramid the greatest of what the Egyptians built, but it is also distinguished by that miraculous perfection in its engineering, accuracy in planning and the beauty of its proportions, and it was and is the most important of the seven wonders of the world. About 23 million stone blocks were used in its construction, each weighing about 2.5 tons, and it is believed that levers were used to transport and lift these huge stones, as other lifting tools were not known at that time, and a large group of craftsmen and skilled workers participated in its construction. Supplying them with temporary labor from the peasants throughout the year, not during the three months of the flood, as was previously thought. The current height of the pyramid is 137 meters, but its original height was 146 meters, and its base is square, and the length of each side is 227 meters.
+As for the pyramid of Khafre, the elements of the complete hierarchical group are shown. Where the valley temple near the houses of the town of Nazlet al-Samman, the ascending road and the funerary temple, whose walls were constructed of local limestone and its flooring of alabaster, and it also includes the famous Sphinx statue that appeared as a new element that was not repeated later. The pyramid of Khafre is distinguished by the presence of part of the external cladding that used to be clad in the pyramid, and the pyramid is not currently open to visit due to the presence of restoration and maintenance works.
+As for the pyramid of Menkaure, it was built on a slope of the slopes of the plateau, and the place was made flat using blocks of limestone.",
+"Governorate":"Giza",
+"timeRegion":"7am  - 5pm"
+},
+{"placeId":5,
+"name":"Hatshepsut temple",
+"location":"luxor",
+"price":140,
+"type":"pharoh",
+"discription":"It is a temple commemorating the Queen Hatshepsut. The ancient Egyptians called Jesiro Amun Bridge, which is honey. The temple engineer Synchen is a distinctive consisting of three balconies. Extension of the temple has several blades, most notably those devoted to a fate and anubis. The temptress inscriptions clearly show the family and religious hostility through the deliberate mutilation of Hatshepsut images by estimating the third, and distortion of Amun images by the priests of Aton.",
+"Governorate":"luxor",
+"timeRegion":"9am  - 5pm"
+},
+{"placeId":6,
+"name":"karnak temple",
+"location":"luxor",
+"price":200,
+"type":"pharoh",
+"discription":"Is the largest and most important Egyptian temples. The ancient Egyptians called the name of Epip Sot which means selected spot for Amun Festers; Where he devoted to the worship of God Amun's holy trials with death and Khansu. It consists of a group of temples and architectural elements by its ancient kings from the center of the central state until the Patrolese era, surrounded by a huge fence of the brick, and submitted by the port of the West. The newly discovered and roman baths were detected in front of the first edifice.
+Karnak includes a temple of the goddess that can be reached through the East Kebash Road from the tenth edifice of the Temple of Karnak, surrounded by East and South and West of the Holy Lake.
+The temple was dedicated to the gods of the death of the wife of Amun Ra and the mother of Khunsu, and was built by Amenbehe II and added kings several additions until the era of the Peterma. The temple includes two small temple fences; The first dedicated to the god of Johansu and returns to the era of the eighteenth family, while the second was devoted to the worship of God Amun and returned to the Romses III.
+The temple starts and then a patio in which several statues of the goddess Samt depicted in the form of a lady with a border, a picture of the faces of the goddess, and then reach another courtyard for the columns and then the gentleman lounge followed by Master",
+"Governorate":"luxor",
+"timeRegion":"7am  - 8pm"
+},
+{"placeId":7,
+"name":"The Unfinished Obelisk",
+"location":"aswan city",
+"price":80,
+"type":"pharoh",
+"discription":"The missing obelisk lies on the northern edge of the obelisk quarry, which is the most important granite quarry in Aswan; it was discovered in 1921 in the Aswan quarries, where its stones were used in building the pyramid group of King Khufu and many obelisks were also cut from it. This obelisk is the longest Egyptian obelisk, reaching a length of about 42 m It weighs about 1168 tons. Its width at the base is 4 m and 20 cm, and its width at the top is 2 m and 40 cm, and its length is 41 m and 75 cm. The work was not completed with this obelisk due to the cracking of its surface. The importance of the missing obelisk is due to the fact that it showed how obelisks were made and huge stones were cut. For example, in the quarry were found balls of diorite stone - each weighing up to 6 kg - that were used as hammers to separate and cut the sides of the obelisk, and their effects are visible on the obelisk body, a process that precedes the work of a trench around the obelisk that allows this huge mass to be fully released.",
+"Governorate":"aswan",
+"timeRegion":"7am  - 5pm at summer , 7am - 4pm at winter"
+},
+{"placeId":8,
+"name":"Ramesseum",
+"location":"tiba",
+"price":80,
+"type":"pharoh",
+"discription":"TIt is a funerary temple for King Ramses II, and the temple in its architectural design is similar to the Temple of Abu Simbel in Aswan, except that it was subjected to a strong earthquake that destroyed its fa�ade, and its entrance was changed to the current side overlooking the marina. Many important scenes dating back to the era of King Ramses II are engraved on its walls, such as the scenes of the famous Battle of Kadesh, in addition to the devotional scenes that represent Ramses II with various deities, as well as some astronomical scenes that depict the seasons of the year and months, as well as a scene depicting the name of Ramses II inside the tree Holy, as there is a huge statue of King Ramses II in the temple, resembling a manmon statue.",
+"Governorate":"luxor",
+"timeRegion":"6am - 5 pm"
+},
+"placeId":9,
+"name":"Mohamed Ali Mosque",
+"location":"mohamed ali's nine arches",
+"price":0,
+"type":"islamic",
+"discription":"This mosque was established by Muhammad Ali Pasha, the governor of Egypt, after the completion of the nine arches 1248 AH / 1832 CE, and then the mosque was renewed during the reign of Khedive Abbas Helmy II 1312 AH / 1894 CE.
+It is a rectangular space and it follows the style of the Ottoman mosques without an open courtyard. The mosque is divided from the inside into three tiles through two rows of arches carried on marble columns, and the middle of the ceiling is an octagonal sikh.
+This mosque consists of four facades, which is the north-eastern fa�ade, and it contains the entrances to the mosque, and the main entrance is located at the far right of the facade, and it has a recessed stone, the height of the facade
+On both sides of the entrance, there are two maksalat, and there is an inscription band that is executed in relief on the right part of the entrance.
+ 
+The other entrance is preceded by a staircase of two steps, and this entrance is perpendicular to the middle slab of the mosque, and it is in an entrance on either side of two small tiles made of modern granite, above the entrance a text of a script that the prayer was on the believers in a timed book, and these are recent renewals from 1993 AD, as indicated by an outside panel",
+"Governorate":"sharqia",
+"timeRegion":"all time"
+},
+{"placeId":10,
+"name":"queens valley",
+"location":"queens valley",
+"price":100,
+"type":"pharoh",
+"discription":"The Valley of the Queens is located in the southernmost part of the Theban Necropolis. The ancient Egyptian called it "Tast Nefro", meaning the beautiful place. The valley was designated to bury the queens, princesses, and princes of the nineteenth and twentieth dynasties. The valley includes more than 70 tombs, the most important of which is the tomb of Queen Nefertari, the wife of King Ramses II, who still preserves the beauty and splendor of her inscriptions and colors. Likewise, the tombs of the princes, Amun, Hur, Khabash, and Khaa, Im, the sons of King Ramses III.",
+"Governorate":"luxor",
+"timeRegion":"9am - 5 pm"
+},
+]
+}

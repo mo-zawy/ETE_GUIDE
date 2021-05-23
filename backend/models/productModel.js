@@ -29,15 +29,23 @@ const productSchema = mongoose.Schema({
         type:String,
         required:true,
     },
-    brand:{
+    location:{
         type:String,
         required:true
     },
-    category:{
+    type:{
         type:String,
         required:true,
     },
     description:{
+        type:String,
+        required:true,
+    },
+    timeRegion:{
+        type:String,
+        required:true,
+    },
+    governorate:{
         type:String,
         required:true,
     },

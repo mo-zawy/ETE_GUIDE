@@ -57,8 +57,10 @@ const createProduct = asyncHandler(async (req, res) => {
       price: 0,
       user: req.user._id,
       image: '/images/sample.jpg',
-      brand: 'Sample brand',
-      category: 'Sample category',
+      location: 'Sample location',
+      type: 'Sample type',
+      governorate:"sample governorate",
+      timeRegion:"sample time",
       countInStock: 0,
       numReviews: 0,
       description: 'Sample description',
@@ -76,11 +78,13 @@ const updateProduct = asyncHandler(async (req,res) =>{
     const {
         name , 
         price , 
+        governorate,
         description , 
         image , 
-        brand , 
-        category ,
-        countInStock
+        location , 
+        type ,
+        countInStock,
+        timeRegion
     } = req.body
     const product = await Product.findById(req.params.id)
     
@@ -89,12 +93,14 @@ const updateProduct = asyncHandler(async (req,res) =>{
         product.price = price
         product.description =description 
         product.image = image 
-        product.brand = brand
-        product.category = category
+        product.location = location
+        product.type = type
         product.countInStock = countInStock
+        product.governorate = governorate
+        product.timeRegion = timeRegion
 
         const updatedProduct = await product.save()
-        res.json(updateProduct)
+        res.json(updatedProduct)
 
     }else{
         res.status(404)

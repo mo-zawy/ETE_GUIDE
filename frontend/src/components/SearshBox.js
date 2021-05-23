@@ -13,22 +13,14 @@ const SearshBox = ({history}) => {
         }
     }
     return (
-        <Form onSubmit={submitHandler} inline>
-            <Form.Control 
-                type='text' 
-                name='q' 
-                onChange={(e)=>setKeyword(e.target.value)}
-                placeholder='Search Places...'
-                className="mr-sm-2 ml-sm-5">
-            </Form.Control>
-            <Button
-                type='submit'
-                variant='outline-success'
-                className='p-2'
-            >
-                Search
-            </Button>
-        </Form>
+        
+        <form onSubmit={submitHandler} className="searchform order-lg-last">
+          <div className="form-group d-flex">
+            <input type="text" className="form-control pl-3" onChange={(e)=>setKeyword(e.target.value)} placeholder="Search" />
+            <button type="submit" placeholder="" className="form-control search"><span className="fas fa-search"></span></button>
+          </div>
+        </form>
+        
     )
 }
 

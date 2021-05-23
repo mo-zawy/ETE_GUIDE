@@ -1,6 +1,6 @@
 const dotenv = require('dotenv');
 const users = require('./data/users')
-const products = require('./data/products')
+const products = require('./data/places')
 const User = require('./models/userModel')
 const Product = require('./models/productModel')
 const Order = require('./models/orderModel')

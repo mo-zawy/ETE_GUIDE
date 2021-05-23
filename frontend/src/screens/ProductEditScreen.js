@@ -16,11 +16,13 @@ const ProductEditScreen = ({match ,  history}) => {
     const [name,setName] = useState('')
     const [price,setPrice] = useState(0)
     const [image,setImage] = useState('')
-    const [brand,setBrand] = useState('')
+    const [location,setlocation] = useState('')
     const [description,setDescription] = useState('')
-    const [category,setCategory] = useState('')
+    const [type,settype] = useState('')
     const [countInStock,setCountInStock] = useState(0)
     const [uploading,setUploading] = useState(false)
+    const [governorate,setGovernorate] = useState('')
+    const [timeRegion,setTimeRegion] = useState('')
 
     const dispatch = useDispatch()
 
@@ -43,10 +45,12 @@ const ProductEditScreen = ({match ,  history}) => {
                 setName(product.name)
                 setPrice(product.price)
                 setImage(product.image)
-                setBrand(product.brand)
+                setlocation(product.location)
                 setDescription(product.description)
-                setCategory(product.category)
+                settype(product.type)
+                setGovernorate(product.governorate)
                 setCountInStock(product.countInStock)
+                setTimeRegion(product.timeRegion)
             }
         }
         
@@ -81,11 +85,13 @@ const ProductEditScreen = ({match ,  history}) => {
             _id:productId,
             name,
             price,
-            brand,
-            category,
+            location,
+            type,
             description,
             countInStock,
-            image
+            image,
+            governorate,
+            timeRegion
         }))
            
     }
@@ -138,24 +144,24 @@ const ProductEditScreen = ({match ,  history}) => {
                         {uploading && <Loader />}
                     </Form.Group>
 
-                    <Form.Group controlId='brand'>
-                        <Form.Label>Brand</Form.Label>
+                    <Form.Group controlId='location'>
+                        <Form.Label>location</Form.Label>
                         <Form.Control 
                             type='text'
-                            placeholder='Enter place Brand'
-                            value={brand}
-                            onChange={e=>setBrand(e.target.value)}
+                            placeholder='Enter place location'
+                            value={location}
+                            onChange={e=>setlocation(e.target.value)}
                         >
                         </Form.Control>
                     </Form.Group>
                     
-                    <Form.Group controlId='category'>
-                        <Form.Label>Category</Form.Label>
+                    <Form.Group controlId='type'>
+                        <Form.Label>type</Form.Label>
                         <Form.Control 
                             type='text'
-                            placeholder='Enter Place Category'
-                            value={category}
-                            onChange={e=>setCategory(e.target.value)}
+                            placeholder='Enter Place type'
+                            value={type}
+                            onChange={e=>settype(e.target.value)}
                         >
                         </Form.Control>
                     </Form.Group>
@@ -167,6 +173,26 @@ const ProductEditScreen = ({match ,  history}) => {
                             placeholder='Enter Place Description'
                             value={description}
                             onChange={e=>setDescription(e.target.value)}
+                        >
+                        </Form.Control>
+                    </Form.Group>
+                    <Form.Group controlId='governorate'>
+                        <Form.Label>Governorate</Form.Label>
+                        <Form.Control 
+                            type='text'
+                            placeholder='Enter Place Governorate'
+                            value={governorate}
+                            onChange={e=>setGovernorate(e.target.value)}
+                        >
+                        </Form.Control>
+                    </Form.Group>
+                    <Form.Group controlId='timeRegion'>
+                        <Form.Label>Time Region</Form.Label>
+                        <Form.Control 
+                            type='text'
+                            placeholder='Enter Place Time Region'
+                            value={timeRegion}
+                            onChange={e=>setTimeRegion(e.target.value)}
                         >
                         </Form.Control>
                     </Form.Group>
