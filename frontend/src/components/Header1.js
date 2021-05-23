@@ -46,7 +46,10 @@ const Header1 = () => {
                                             <span>Profile</span>
                                         </Link>
                                     ):(
-                                        <li className="nav-item"><Link to="/login" className="nav-link"><i className='fas fa-user'></i>{' '}Sign In</Link></li>
+                                        <Link to="/login" className="btn py-2 px-3 btn-primary d-flex align-items-center justify-content-center">
+                                            <span>Sign In</span>
+                                        </Link>
+                                        
                                     )}
                                     
                                 </p>
