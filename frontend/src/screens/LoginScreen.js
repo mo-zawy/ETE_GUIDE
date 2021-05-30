@@ -6,6 +6,7 @@ import Message from '../components/Message'
 import Loader from '../components/Loader'
 import FormContainer from '../components/FormContainer'
 import {login} from '../actions/userAction'
+import logo from '../img/aa.png'
 
 
 const LoginScreen = ({location, history}) => {
@@ -33,6 +34,58 @@ const LoginScreen = ({location, history}) => {
     }
 
     return (
+        
+        <>
+            
+            <div className='container-fluid'>
+            <div className="row">
+                <div className="col-lg-6 col-md-6 d-none d-md-block image-container">
+
+                </div>
+                <div className="col-lg-6 col-md-6 form-container">
+                {error && <Message variant="danger">{error}</Message>}
+                {loading && <Loader />}
+                    <div className="col-lg-8 col-md-12 col-sm-9 col-xs-12 form-box text-center">
+                        <div className="logo mb-3">
+                            <img  src={logo} alt="logo" width='140px'/>
+                        </div>
+                        <div className="heading mb-4">
+                            <h4>Login into your account</h4>
+                        </div>
+                        <form onSubmit={submitHandler}>
+                            <div className="form-input">
+                                <span><i className="fa fa-envelope"></i></span>
+                                <input type='email'
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    placeholder='Email Address'
+                                    name='email'
+                                    required />
+                            </div>
+                            <div className="form-input">
+                            <span><i className="fa fa-lock"></i></span>
+                                <input type='password'
+                                    placeholder='Password'
+                                    name='password'
+                                    minLength='6'
+                                    value={password}
+                                    onChange={(e) =>setPassword(e.target.value)}/>
+                            </div>
+            
+                            <div className="text-left mb-3">
+                                <button type='submit' className='btn'>Login</button>
+                            </div>
+                            
+                            <div style={{color:'#3c4a53'}}>Don't have an account
+                                <Link to={  redirect ? `/register?redirect=${redirect}` : '/register'} className='register-link'> Register here</Link>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+            {/*
         <FormContainer>
             <h1>Sign In</h1>
             {error && <Message variant="danger">{error}</Message>}
@@ -48,7 +101,7 @@ const LoginScreen = ({location, history}) => {
                     >
                     </Form.Control>
                 </Form.Group>
-
+                
                 <Form.Group controlId='password'>
                     <Form.Label>Password</Form.Label>
                     <Form.Control 
@@ -75,6 +128,8 @@ const LoginScreen = ({location, history}) => {
                 </Col>
             </Row>
         </FormContainer>
+        */}
+        </>
     )
 }
 

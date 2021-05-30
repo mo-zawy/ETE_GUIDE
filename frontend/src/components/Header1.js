@@ -12,6 +12,7 @@ const Header1 = () => {
     const {userInfo} = userLogin
     
     const logoutHandler = () =>{
+        console.log('ss')
         dispatch(logout())
     }
     return (
@@ -67,10 +68,17 @@ const Header1 = () => {
 	        <Route render={({history})=> <SearshBox history={history} />} />
             <Navbar.Collapse id="ftco-nav" className="collapse navbar-collapse">
 	        <ul className="navbar-nav mr-auto">
-	        	<li className="nav-item active"><Link to="/" className="nav-link pl-0">Home</Link></li>
+	        	<li className="nav-item active">
+                    <Link to="/" className="nav-link pl-0">Home</Link>
+                </li>
 	        	<li className="nav-item">
                     <Link to="/cart" className="nav-link">
                         Cart
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link to="/contact" className="nav-link">
+                        Contact
                     </Link>
                 </li>
 	        	
@@ -81,6 +89,7 @@ const Header1 = () => {
                     )}
                     {userInfo && userInfo.isAdmin &&(
                                 <>
+                                    <li className="nav-item"><Link to="/admin/contact" className="nav-link">Users</Link></li>
                                     <li className="nav-item"><Link to="/admin/userlist" className="nav-link">Users</Link></li>
                                     <li className="nav-item"><Link to="/admin/productlist" className="nav-link">Products</Link></li>
                                     <li className="nav-item"><Link to="/admin/orderlist" className="nav-link">Orders</Link></li>

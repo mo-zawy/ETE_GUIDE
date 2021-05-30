@@ -6,6 +6,7 @@ import Message from '../components/Message'
 import Loader from '../components/Loader'
 import FormContainer from '../components/FormContainer'
 import {register} from '../actions/userAction'
+import logo from '../img/aa.png'
 
 
 const RegisterScreen = ({location, history}) => {
@@ -24,6 +25,7 @@ const RegisterScreen = ({location, history}) => {
     const redirect = location.search ? location.search.split('=')[1] : '/'
 
     useEffect(()=>{
+        console.log(userInfo)
         if(userInfo){
             history.push(redirect)
         }
@@ -36,12 +38,79 @@ const RegisterScreen = ({location, history}) => {
         }else{
             dispatch(register(name,email,password))
         }
-        //Dispatch Register
-
-        
+        //Dispatch Register   
     }
 
     return (
+        <div className='container-fluid'>
+            <div className="row">
+                <div className="col-lg-6 col-md-6 d-none d-md-block image-container">
+
+                </div>
+                <div className="col-lg-6 col-md-6 form-container">
+                    <div className="col-lg-8 col-md-12 col-sm-9 col-xs-12 form-box text-center">
+                        <div className="logo mb-3">
+                            <img src={logo}  alt="logo" width='140px'/>
+                        </div>
+                        <div className="heading mb-4">
+                            <h4>Craete an account</h4>
+                        </div>
+                        {error && <Message variant="danger">{error}</Message>}
+                        {message && <Message variant="danger">{message}</Message>}
+                        {loading && <Loader />}
+                        <form onSubmit={submitHandler}>
+                            <div className="form-input">
+                                <span><i className="fa fa-user"></i></span>
+                                <input type='text'
+                                    placeholder='Your Name'
+                                    name='name'
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)}
+                                    required/>
+                            </div>
+                            <div className="form-input">
+                                <span><i className="fa fa-envelope"></i></span>
+                                <input type='email'
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    placeholder='Email Address'
+                                    name='email'
+                                    required/>
+                            </div>
+                            <div className="form-input">
+                            <span><i className="fa fa-lock"></i></span>
+                                <input type='password'
+                                    placeholder='Password'
+                                    name='password'
+                                    minLength='6'
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}/>
+                            </div>
+                            <div className="form-input">
+                            <span><i className="fa fa-lock"></i></span>
+                                <input type='password'
+                                    placeholder='Confirm Password'
+                                    name='password2'
+                                    minLength='6'
+                                    value={confirmPassword}
+                                    onChange={(e) => setConfirmPassword(e.target.value)}/>
+                            </div>
+                            
+                            <div className="text-left mb-3">
+                                <button type='submit' className='btn'>Register</button>
+                            </div>
+                            
+                            <div style={{color:'#3c4a53'}}>Already have an account
+                                <Link to={  redirect ? 
+                        `/login?redirect=${redirect}` 
+                        : '/login'} className='login-link'> Login here</Link>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        /*
         <FormContainer>
             <h1>Sign Up</h1>
             {error && <Message variant="danger">{error}</Message>}
@@ -107,6 +176,7 @@ const RegisterScreen = ({location, history}) => {
                 </Col>
             </Row>
         </FormContainer>
+        */
     )
 }
 

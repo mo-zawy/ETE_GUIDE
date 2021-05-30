@@ -19,6 +19,7 @@ import ProductListScreen from './screens/ProductListScreen'
 import ProductEditScreen from './screens/ProductEditScreen'
 import Header1 from './components/Header1'
 import Footer1 from './components/Footer1'
+import ContectUsScreen from './screens/ContectUsScreen'
 
 
 
@@ -30,13 +31,16 @@ const App = () => {
       <Header1 />
       {/*<Header />>*/ }
       <main className='py-3'>
+      <Route  path='/login' component={LoginScreen} />
+      <Route  path='/register' component={RegisterScreen} />
+      <Route exact path='/contact' component={ContectUsScreen}/>
         <Container>
           <Route  path='/order/:id' component={OrderScreen} />
           <Route  path='/payment' component={PaymentScreen} />
           <Route  path='/placeorder' component={PlaceOrderScreen} />
           <Route  path='/shipping' component={ShippingScreen} />
-          <Route  path='/login' component={LoginScreen} />
-          <Route  path='/register' component={RegisterScreen} />
+          
+          
           <Route  path='/profile' component={ProfileScreen} />
           <Route  path='/product/:id' component={ProductScreen} />
           <Route  path='/cart/:id?' component={CartScreen} />
