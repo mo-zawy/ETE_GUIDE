@@ -16,6 +16,7 @@ import {
   ORDER_PAY_RESET,
   ORDER_DELIVER_RESET,
 } from '../constants/orderConstant'
+import StripePayment from '../components/StripePayment'
 
 const OrderScreen = ({ match, history }) => {
   const orderId = match.params.id
@@ -64,7 +65,7 @@ const OrderScreen = ({ match, history }) => {
     } else if (!order.isPaid) {
       setSdkReady(true)
     }
-  }, [dispatch, orderId, successPay, order,orderDeliver])
+  }, [ order , successPay, successDeliver])
 
   const successPaymentHandler = (details,data) => {
     console.log(details,data)
@@ -81,6 +82,7 @@ const OrderScreen = ({ match, history }) => {
     <Message variant='danger'>{error}</Message>
   ) : (
     <>
+      
       <h1>Order {order._id}</h1>
       <Row>
         <Col md={8}>
@@ -191,7 +193,7 @@ const OrderScreen = ({ match, history }) => {
                   {!sdkReady ? (
                     <Loader />
                   ) : (
-                    <PayPalScreen />
+                    order.paymentMethod === 'Stripe' ? <StripePayment  orderId ={orderId} /> :<div>paypal</div>
                   )}
                 </ListGroup.Item>
               )}

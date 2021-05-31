@@ -1,7 +1,9 @@
 const asyncHandler = require('express-async-handler')
+
 const Order = require('../models/orderModel')
+require('dotenv').config()
 
-
+const stripe = require('stripe')(process.env.STRIPE_SECRET_TEST)
 // @desc Create new order
 // @route POST /api/orders
 // @access priate
@@ -57,25 +59,48 @@ const getOrderById = asyncHandler(async (req,res) =>{
 // @route   GET /api/orders/:id/pay
 // @access  Private
 const updateOrderToPaid = asyncHandler(async (req, res) => {
+    
+
+    let {amount ,id,Customer} = req.body
+    
     const order = await Order.findById(req.params.id)
-  
     if (order) {
-      order.isPaid = true
-      order.paidAt = Date.now()
-      order.paymentResult = {
-        id: req.body.id,
-        status: req.body.status,
-        update_time: req.body.update_time,
-        email_address: req.body.payer.email_address,
+      try {
+        const payment = await stripe.paymentIntents.create({
+          amount,
+          currency:'USD',
+          description:Customer,
+          payment_method : id,
+          confirm:true,
+      })
+          console.log('payment ',payment)
+          order.isPaid = true
+          order.paidAt = Date.now()
+          order.paymentResult = {
+            id: req.body.id,
+            status: req.body.status,
+            update_time: req.body.update_time,
+            email_address: Customer,
+          }
+          const updatedOrder = await order.save()
+  
+          res.json(updatedOrder)
+      } catch (error) {
+          console.log("Error",error)
+          res.json({
+              message:'Fail',
+              success:false
+          })
       }
-  
-      const updatedOrder = await order.save()
-  
-      res.json(updatedOrder)
+      
     } else {
       res.status(404)
       throw new Error('Order not found')
     }
+    
+    
+    
+    
   })
 
 // @desc    Update order to Delivered
