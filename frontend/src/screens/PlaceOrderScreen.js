@@ -81,7 +81,7 @@ const PlaceOrderScreen = ({history}) => {
                                                     </Link>
                                                 </Col>
                                                 <Col md={4}>
-                                                    {item.qty} X ${item.price} = ${item.qty * item.price}
+                                                    {item.qty} X {item.price} EGP = {item.qty * item.price} EGP
                                                 </Col>
                                                 
                                             </Row>
@@ -101,25 +101,25 @@ const PlaceOrderScreen = ({history}) => {
                             <ListGroup.Item>
                                 <Row>
                                     <Col>Items</Col>
-                                    <Col>${cart.itemsPrice}</Col>
+                                    <Col>{cart.itemsPrice} EGP</Col>
                                 </Row>
                             </ListGroup.Item>
                             <ListGroup.Item>
                                 <Row>
                                     <Col>Shipping</Col>
-                                    <Col>${cart.shippingPrice}</Col>
+                                    <Col>{cart.shippingPrice} EGP</Col>
                                 </Row>
                             </ListGroup.Item>
                             <ListGroup.Item>
                                 <Row>
                                     <Col>Tax</Col>
-                                    <Col>${cart.taxPrice}</Col>
+                                    <Col>{cart.taxPrice} EGP</Col>
                                 </Row>
                             </ListGroup.Item>
                             <ListGroup.Item>
                                 <Row>
                                     <Col>Total</Col>
-                                    <Col>${cart.totalPrice}</Col>
+                                    <Col>{cart.totalPrice} EGP</Col>
                                 </Row>
                             </ListGroup.Item>
                             <ListGroup.Item>

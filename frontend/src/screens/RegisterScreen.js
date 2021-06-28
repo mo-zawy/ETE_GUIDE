@@ -49,9 +49,9 @@ const RegisterScreen = ({location, history}) => {
                 </div>
                 <div className="col-lg-6 col-md-6 form-container">
                     <div className="col-lg-8 col-md-12 col-sm-9 col-xs-12 form-box text-center">
-                        <div className="logo mb-3">
+                        {/*<div className="logo mb-3">
                             <img src={logo}  alt="logo" width='140px'/>
-                        </div>
+                        </div>*/}
                         <div className="heading mb-4">
                             <h4>Craete an account</h4>
                         </div>

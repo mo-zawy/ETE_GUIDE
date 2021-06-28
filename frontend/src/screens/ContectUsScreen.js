@@ -42,7 +42,7 @@ const ContectUsScreen = () => {
           <div></div>
         </div>
         <p className= "text">
-          This website is cereated to tell you about places in Egypt, get your Tekit and get a goot trip <br/>
+          This website is cereated to tell you about places in Egypt, get your Teckit and get a goot trip <br/>
           if you have any problem, question or suggestion don't hesitate and tell us.
         </p>
       </div>
@@ -92,7 +92,7 @@ const ContectUsScreen = () => {
                                 <td>{m.name}</td>
                                 <td>{m.email}</td>
                                 <td>{m.about}</td>
-                                <td>${m.message}</td>
+                                <td>{m.message}</td>
                                 
                             </tr>
                         ))}

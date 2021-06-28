@@ -9,6 +9,7 @@ const Product = ({product}) => {
             <Link to={`/product/${product._id}`}>
                 <Card.Img style={{maxHeight:'250px',minHeight:'200px'}} src={product.image} variant="top" />
             </Link>
+            
             <Card.Body>
                 <Link to={`/product/${product._id}`}>
                     <Card.Title as='div'>
@@ -20,7 +21,7 @@ const Product = ({product}) => {
                 </Card.Text>
                 
                 <Card.Text as='h3'>
-                    ${product.price}
+                    {product.price} EGP
                 </Card.Text>
             </Card.Body>
         </Card>

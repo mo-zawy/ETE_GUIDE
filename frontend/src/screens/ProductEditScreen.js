@@ -23,7 +23,9 @@ const ProductEditScreen = ({match ,  history}) => {
     const [uploading,setUploading] = useState(false)
     const [governorate,setGovernorate] = useState('')
     const [timeRegion,setTimeRegion] = useState('')
+    const [images,setImages] = useState([])
 
+    
     const dispatch = useDispatch()
 
     const productDetails = useSelector(state => state.productDetails)
@@ -32,6 +34,30 @@ const ProductEditScreen = ({match ,  history}) => {
     const productUpdate = useSelector(state => state.productUpdate)
     const {loading:loadingUpdate , error:errorUpdate , success:successUpdate} = productUpdate
 
+
+    const addImages = (e)=>{
+        const a = e.target.files
+        const z = Array.from(a)
+
+        z.forEach(i => images.push(i))
+        console.log('images' , images)
+    }
+    const imagesHandler = async (e) =>{
+        e.preventDefault()
+        var formData = new FormData()
+        for(let i = 0; i<images.length ; i++ ){
+            formData.append('images',images[i])
+        }
+        const config ={
+            headers:{
+                'Content-Type':'multipart/form-data'
+            }
+        }
+        axios.post(`/api/upload-images/${product._id}`, formData,config).then((a)=>{
+            console.log('aa',a)
+        })
+       
+    }
 
 
     useEffect(()=>{
@@ -106,6 +132,7 @@ const ProductEditScreen = ({match ,  history}) => {
                 {loadingUpdate && <Loader />}
                 {errorUpdate && <Message variant='danger'>{errorUpdate}</Message>}
                 {loading ? <Loader /> : error ? <Message variant='danger'>{error}</Message>:(
+                <>
                 <Form onSubmit={submitHandler}>
                     <Form.Group controlId='name'>
                         <Form.Label>Name</Form.Label>
@@ -211,6 +238,18 @@ const ProductEditScreen = ({match ,  history}) => {
                         Update Place
                     </Button>
                 </Form>
+                <Form onSubmit={(e)=>imagesHandler(e)}>
+                    <Form.Group controlId='images'>
+                        <Form.Label>Images</Form.Label>
+                        <Form.File id='images-file' label='Choose File' custom max='8' onChange={(e)=>addImages(e)} multiple>
+                        </Form.File>
+                        
+                    </Form.Group>
+                    <Button type='submit' variant='primary'>
+                        Add images
+                    </Button>
+                </Form>
+                </>
                 )}
                 
                 

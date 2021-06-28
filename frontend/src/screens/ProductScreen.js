@@ -6,6 +6,7 @@ import Rating from '../components/Rating'
 import {useDispatch , useSelector} from 'react-redux'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
+
 import Meta from '../components/Meta'
 import {PRODUCT_CREATE_REVIEW_RESET} from '../constants/productConstant'
 
@@ -60,7 +61,10 @@ const ProudectScreen = ({history,match}) => {
                     <Meta title={product.name} />
                     <Row>
                     <Col md={6}>
-                        <Image src={product.image} alt={product.name} fluid />
+                        <Image src={product.image} alt={product.name} fluid  className='mb-2'/>
+                        {product.images && product.images.length > 0 && <Link to={`/${product._id}/image-gallery`}>
+                            More Images <i class="fas fa-images"></i>
+                        </Link>}
                     </Col>
                     <Col md={3}>
                         <ListGroup variant="flush">
@@ -128,10 +132,10 @@ const ProudectScreen = ({history,match}) => {
                                 <ListGroup.Item>
                                     <Row>
                                         <Button 
-                                            onClick ={addToCardHander}
+                                            onClick ={()=>addToCardHander()}
                                             className='btn-block'
                                             type="button" 
-                                            disabled={product.countInStock === 0}>
+                                            disabled={Number(product.countInStock) === 0}>
                                             Add to Card
                                         </Button>
                                     </Row>

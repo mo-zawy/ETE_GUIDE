@@ -20,6 +20,7 @@ import ProductEditScreen from './screens/ProductEditScreen'
 import Header1 from './components/Header1'
 import Footer1 from './components/Footer1'
 import ContectUsScreen from './screens/ContectUsScreen'
+import ImageGallery from './components/ImageGallery'
 
 
 
@@ -39,6 +40,7 @@ const App = () => {
           <Route  path='/payment' component={PaymentScreen} />
           <Route  path='/placeorder' component={PlaceOrderScreen} />
           <Route  path='/shipping' component={ShippingScreen} />
+          <Route  path='/:id/image-gallery' component={ImageGallery} />
           
           
           <Route  path='/profile' component={ProfileScreen} />
