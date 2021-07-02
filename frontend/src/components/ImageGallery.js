@@ -1,6 +1,6 @@
 import React, { useState , useEffect } from 'react'
 import {useDispatch , useSelector} from 'react-redux'
-
+import '../index.css'
 import { listProductDetails } from '../actions/productAction'
 
 const ImageGallery = ({match}) => {
