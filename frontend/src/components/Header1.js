@@ -22,7 +22,7 @@ const Header1 = () => {
                 
                 <div className="row no-gutters d-flex align-items-center align-items-stretch">
                     <div className="col-md-4 d-flex align-items-center py-4">
-                        <Link className="navbar-brand" to="/">EE-GUIDE</Link>
+                        <Link className="navbar-brand" to="/">ETE-GUIDE</Link>
                     </div>
                     <div className="col-lg-8 d-block">
                         <div className="row d-flex">

@@ -43,9 +43,11 @@ const LoginScreen = ({location, history}) => {
 
                 </div>
                 <div className="col-lg-6 col-md-6 form-container">
-                {error && <Message variant="danger">{error}</Message>}
-                {loading && <Loader />}
+                
+                
                     <div className="col-lg-8 col-md-12 col-sm-9 col-xs-12 form-box text-center">
+                        {error && <Message variant="danger">may have a problem in email or password</Message>}
+                        {loading && <Loader />}
                         {/*<div className="logo mb-3">
                             <img  src={logo} alt="logo" width='140px'/>
                         </div>*/}

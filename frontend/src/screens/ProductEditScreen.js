@@ -18,6 +18,7 @@ const ProductEditScreen = ({match ,  history}) => {
     const [image,setImage] = useState('')
     const [location,setlocation] = useState('')
     const [description,setDescription] = useState('')
+    const [descriptionAr,setDescriptionAr] = useState('')
     const [type,settype] = useState('')
     const [countInStock,setCountInStock] = useState(0)
     const [uploading,setUploading] = useState(false)
@@ -73,6 +74,7 @@ const ProductEditScreen = ({match ,  history}) => {
                 setImage(product.image)
                 setlocation(product.location)
                 setDescription(product.description)
+                setDescriptionAr(product.descriptionAr)
                 settype(product.type)
                 setGovernorate(product.governorate)
                 setCountInStock(product.countInStock)
@@ -114,6 +116,7 @@ const ProductEditScreen = ({match ,  history}) => {
             location,
             type,
             description,
+            descriptionAr,
             countInStock,
             image,
             governorate,
@@ -197,9 +200,19 @@ const ProductEditScreen = ({match ,  history}) => {
                         <Form.Label>Description</Form.Label>
                         <Form.Control 
                             type='text'
-                            placeholder='Enter Place Description'
+                            placeholder='Enter Description'
                             value={description}
                             onChange={e=>setDescription(e.target.value)}
+                        >
+                        </Form.Control>
+                    </Form.Group>
+                    <Form.Group controlId='description'>
+                        <Form.Label>Arabic Description</Form.Label>
+                        <Form.Control 
+                            type='text'
+                            placeholder='Enter Arabic Description'
+                            value={descriptionAr}
+                            onChange={e=>setDescriptionAr(e.target.value)}
                         >
                         </Form.Control>
                     </Form.Group>

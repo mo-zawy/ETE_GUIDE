@@ -42,6 +42,10 @@ const productSchema = mongoose.Schema({
         type:String,
         required:true,
     },
+    descriptionAr:{
+        type:String,
+        required:true,
+    },
     timeRegion:{
         type:String,
         required:true,

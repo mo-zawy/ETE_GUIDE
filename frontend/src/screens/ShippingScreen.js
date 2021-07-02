@@ -13,12 +13,14 @@ const ShippingScreen = ({history}) => {
     const [city, setCity] = useState(shippingAddress.city)
     const [postalCode, setPostalCode] = useState(shippingAddress.postalCode)
     const [country, setCountry] = useState(shippingAddress.country)
+    const [date, setDate] = useState(Date.now())
+    const [phone, setPhone] = useState(shippingAddress.phone)
 
     const dispatch = useDispatch()
     
     const submitHandler = (e)=>{
         e.preventDefault()
-        dispatch(saveShippingAddress({address,city,postalCode,country}))
+        dispatch(saveShippingAddress({address,city,postalCode,country,phone,date}))
         history.push('/payment')
     }
     return (
@@ -26,7 +28,30 @@ const ShippingScreen = ({history}) => {
             <CheckoutSteps step1 step2 />
             <h1>Shipping</h1>
             <Form onSubmit={submitHandler}>
-            <Form.Group controlId='address'>
+            <Form.Group controlId='date'>
+                {console.log(phone)}
+                    <Form.Label>Date of ticket</Form.Label>
+                    <Form.Control 
+                        type='date'
+                        placeholder='Enter a date'
+                        value={date}
+                        required
+                        onChange={e=>setDate(e.target.value)}
+                    >
+                    </Form.Control>
+                </Form.Group>
+                <Form.Group controlId='phone'>
+                    <Form.Label>whatsapp or telegram</Form.Label>
+                    <Form.Control 
+                        type='tel'
+                        placeholder='Enter a phone number'
+                        value={phone}
+                        required
+                        onChange={e=>setPhone(e.target.value)}
+                    >
+                    </Form.Control>
+                </Form.Group>
+                <Form.Group controlId='address'>
                     <Form.Label>Address</Form.Label>
                     <Form.Control 
                         type='text'

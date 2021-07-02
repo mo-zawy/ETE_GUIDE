@@ -1,6 +1,5 @@
 import {BrowserRouter as Router , Route } from 'react-router-dom'
 import {Container} from 'react-bootstrap'
-import Header from './components/Header'
 import Footer from './components/Footer'
 import HomeScreen from './screens/HomeScreen'
 import ProductScreen from './screens/ProductScreen'
@@ -21,7 +20,7 @@ import Header1 from './components/Header1'
 import Footer1 from './components/Footer1'
 import ContectUsScreen from './screens/ContectUsScreen'
 import ImageGallery from './components/ImageGallery'
-
+import ProductDescription from './components/ProductDescription'
 
 
 
@@ -41,6 +40,7 @@ const App = () => {
           <Route  path='/placeorder' component={PlaceOrderScreen} />
           <Route  path='/shipping' component={ShippingScreen} />
           <Route  path='/:id/image-gallery' component={ImageGallery} />
+          <Route  path='/:id/description' component={ProductDescription} />
           
           
           <Route  path='/profile' component={ProfileScreen} />

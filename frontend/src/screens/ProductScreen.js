@@ -62,9 +62,6 @@ const ProudectScreen = ({history,match}) => {
                     <Row>
                     <Col md={6}>
                         <Image src={product.image} alt={product.name} fluid  className='mb-2'/>
-                        {product.images && product.images.length > 0 && <Link to={`/${product._id}/image-gallery`}>
-                            More Images <i class="fas fa-images"></i>
-                        </Link>}
                     </Col>
                     <Col md={3}>
                         <ListGroup variant="flush">
@@ -75,10 +72,17 @@ const ProudectScreen = ({history,match}) => {
                                 <Rating value={product.rating} text={`${product.numReviews} reviews`} />
                             </ListGroup.Item>
                             <ListGroup.Item>
-                                Price: ${product.price}
+                                Price: {product.price} EGP
                             </ListGroup.Item>
                             <ListGroup.Item>
-                                Description: {product.description}
+                                {product.images && product.images.length > 0 && <Link to={`/${product._id}/image-gallery`}>
+                                    More Images <i class="fas fa-images"></i>
+                                </Link>}
+                            </ListGroup.Item>
+                            <ListGroup.Item>
+                                {product.description &&  <Link to={`/${product._id}/description`}>
+                                    More details <i class="fas fa-info"></i>
+                                </Link>}
                             </ListGroup.Item>
                         </ListGroup>
                     </Col>
@@ -91,7 +95,7 @@ const ProudectScreen = ({history,match}) => {
                                             Price:
                                         </Col>
                                         <Col>
-                                            <strong>${product.price}</strong>
+                                            <strong>{product.price} EGP</strong>
                                         </Col>
                                     </Row>
                                 </ListGroup.Item>
@@ -109,7 +113,7 @@ const ProudectScreen = ({history,match}) => {
                                 {product.countInStock > 0 && (
                                     <ListGroup.Item>
                                         <Row>
-                                            <Col>Qyy</Col>
+                                            <Col>Qty</Col>
                                             <Col>
                                                 <Form.Control 
                                                     as='select'

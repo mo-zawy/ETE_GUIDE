@@ -47,7 +47,7 @@ const StripeScreen = ({orderId}) => {
                   }
                 const {id} = paymentMethod
                 const {data} = await axios.put(`/api/orders/${orderId}/pay`,{
-                    amount:order.totalPrice,
+                    amount:Math.floor( order.totalPrice),
                     id,
                     Customer:userInfo.email,
                     orderId,

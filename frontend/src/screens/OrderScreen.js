@@ -93,6 +93,12 @@ const OrderScreen = ({ match, history }) => {
                 <strong>Name: </strong> {order.user.name}
               </p>
               <p>
+                <strong>phone: </strong> {order.shippingAddress.phone}
+              </p>
+              <p>
+                <strong>must deleverd on: </strong> {order.shippingAddress.date}
+              </p>
+              <p>
                 <strong>Email: </strong>{' '}
                 <a href={`mailto:${order.user.email}`}>{order.user.email}</a>
               </p>

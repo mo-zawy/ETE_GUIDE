@@ -55,7 +55,7 @@ const RegisterScreen = ({location, history}) => {
                         <div className="heading mb-4">
                             <h4>Craete an account</h4>
                         </div>
-                        {error && <Message variant="danger">{error}</Message>}
+                        {error && <Message variant="danger">may have a problem in email or password</Message>}
                         {message && <Message variant="danger">{message}</Message>}
                         {loading && <Loader />}
                         <form onSubmit={submitHandler}>

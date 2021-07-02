@@ -6,7 +6,7 @@ const Product = require('../models/productModel')
 // @route GET /api/products
 // @access public
 const getProducts = asyncHandler(async (req,res) =>{
-    const pageSize = 10
+    const pageSize = 12
     const page =Number(req.query.pageNumber) || 1
     const keyword = req.query.keyword ? {
         name:{
@@ -64,6 +64,7 @@ const createProduct = asyncHandler(async (req, res) => {
       countInStock: 0,
       numReviews: 0,
       description: 'Sample description',
+      descriptionAr: 'وصف عربي',
     })
   
     const createdProduct = await product.save()
@@ -84,7 +85,8 @@ const updateProduct = asyncHandler(async (req,res) =>{
         location , 
         type ,
         countInStock,
-        timeRegion
+        timeRegion,
+        descriptionAr
     } = req.body
     const product = await Product.findById(req.params.id)
     
@@ -98,6 +100,7 @@ const updateProduct = asyncHandler(async (req,res) =>{
         product.countInStock = countInStock
         product.governorate = governorate
         product.timeRegion = timeRegion
+        product.descriptionAr = descriptionAr
 
         const updatedProduct = await product.save()
         res.json(updatedProduct)

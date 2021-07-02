@@ -1,9 +1,11 @@
 const asyncHandler = require('express-async-handler')
 
 const Order = require('../models/orderModel')
+
 require('dotenv').config()
 
 const stripe = require('stripe')(process.env.STRIPE_SECRET_TEST)
+
 // @desc Create new order
 // @route POST /api/orders
 // @access priate
@@ -16,7 +18,7 @@ const addOrderItems = asyncHandler(async (req,res) =>{
         taxPrice,
         shippingPrice,
         totalPrice } = req.body
-
+      console.log(orderItems)
     if(orderItems && orderItems.length === 0){
         res.status(400)
         throw new Error('No order items')
@@ -32,7 +34,6 @@ const addOrderItems = asyncHandler(async (req,res) =>{
             shippingPrice,
             totalPrice
         })
-
         const createdOrder = await order.save()
 
         res.status(201).json(createdOrder)
