@@ -1,6 +1,7 @@
 import React, { useState , useEffect } from 'react'
 import {useDispatch , useSelector} from 'react-redux'
 import '../index.css'
+import '../gallery.css'
 import { listProductDetails } from '../actions/productAction'
 
 const ImageGallery = ({match}) => {
@@ -35,7 +36,7 @@ const ImageGallery = ({match}) => {
             <div className="gallery mt-3">
                 {product && product.images && product.images.length > 0 && product.images.map((item,index)=>{
                     return(
-                        <div className="pics" key={index} onClick={()=>getImage(item)}>
+                        <div className="pics"  key={index} onClick={()=>getImage(item)}>
                             <img src={item} style={{width:"100%"}} />
                         </div>
                     )

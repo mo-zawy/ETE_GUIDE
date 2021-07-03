@@ -1,4 +1,4 @@
-import React, { useState, useEffect , useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
 import { PayPalButton } from 'react-paypal-button-v2'
 import { Link } from 'react-router-dom'
@@ -33,7 +33,7 @@ const OrderScreen = ({ match, history }) => {
 
   const orderDeliver = useSelector((state) => state.orderDeliver)
   const { loading: loadingDeliver, success: successDeliver } = orderDeliver
-  
+
 
   const userLogin = useSelector((state) => state.userLogin)
   const { userInfo } = userLogin
@@ -50,31 +50,31 @@ const OrderScreen = ({ match, history }) => {
   }
 
   const paypalRef = useRef(null)
-  
+
   useEffect(() => {
     if (!userInfo) {
       history.push('/login')
     }
 
-    
+
     if (!order || successPay || successDeliver || order._id !== orderId) {
       dispatch({ type: ORDER_PAY_RESET })
       dispatch({ type: ORDER_DELIVER_RESET })
-      
+
       dispatch(getOrderDetails(orderId))
     } else if (!order.isPaid) {
       setSdkReady(true)
     }
-  }, [ order , successPay, successDeliver])
+  }, [order, successPay, successDeliver])
 
-  const successPaymentHandler = (details,data) => {
-    console.log(details,data)
+  const successPaymentHandler = (details, data) => {
+    console.log(details, data)
     //dispatch(payOrder(orderId, paymentResult))
   }
-  const deliverHandler = ()=>{
+  const deliverHandler = () => {
     dispatch(deliverOrder(order))
   }
-  
+
 
   return loading ? (
     <Loader />
@@ -82,7 +82,7 @@ const OrderScreen = ({ match, history }) => {
     <Message variant='danger'>{error}</Message>
   ) : (
     <>
-      
+
       <h1>Order {order._id}</h1>
       <Row>
         <Col md={8}>
@@ -97,6 +97,9 @@ const OrderScreen = ({ match, history }) => {
               </p>
               <p>
                 <strong>must deleverd on: </strong> {order.shippingAddress.date}
+              </p>
+              <p>
+                <strong>must deleverd in: </strong> {order.shippingAddress.shipingMethod}
               </p>
               <p>
                 <strong>Email: </strong>{' '}
@@ -199,12 +202,12 @@ const OrderScreen = ({ match, history }) => {
                   {!sdkReady ? (
                     <Loader />
                   ) : (
-                    order.paymentMethod === 'Stripe' ? <StripePayment  orderId ={orderId} /> :<div>paypal</div>
+                    order.paymentMethod === 'Stripe' ? <StripePayment orderId={orderId} /> : <div>paypal</div>
                   )}
                 </ListGroup.Item>
               )}
               {loadingDeliver && <Loader />}
-              {userInfo && userInfo.isAdmin && order.isPaid && !order.isDelivered &&(
+              {userInfo && userInfo.isAdmin && order.isPaid && !order.isDelivered && (
                 <ListGroup.Item>
                   <Button type='button' className='btn btn-block' onClick={deliverHandler}>
                     Mark as Delivered
